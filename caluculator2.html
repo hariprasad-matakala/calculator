@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+
+        
+        background-color: burlywood;
+        width:150px;
+        height: 180px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px rgb(249, 18, 111);
+
+        
+       }
+    #display{
+        width:100px;
+        margin-bottom:10PX;
+        border: 2px solid;
+        margin:20px 0 0 20px ;
+    }
+    .hari{
+        border: 2px solid;
+        width:120px;
+        margin:10px
+        
+    
+    }
+    button{
+        margin-bottom:10px;
+        
+        box-shadow: 2px 2px 3px red;
+    }
+
+</style>
+<body>
+    <div class="main">
+        <div>
+            <input type="text" id="display"/>
+        </div>
+        <div class="hari">
+            <button onclick="hari('1')">1</button>
+            <button onclick="hari('2')">2</button>
+            <button onclick="hari('3')">3</button>
+            <button onclick="hari('+')">+</button><br>
+            <button onclick="hari('4')">4</button>
+            <button onclick="hari('5')">5</button>
+            <button onclick="hari('6')">6</button>
+            <button onclick="hari('-')">-</button><br>
+            <button onclick="hari('7')">7</button>
+            <button onclick="hari('8')">8</button>
+            <button onclick="hari('9')">9</button>
+            <button onclick="hari('*')">*</button><br>
+            <button onclick="appendtodisplay('c')">c</button>
+            <button onclick="claculate('=')">=</button>
+            <button onclick="hari('0')">0</button>
+            <button onclick="hari('%')">%</button><br>
+            
+            
+            
+        </div>
+    </div>
+    <script>
+         var display=document.getElementById("display");
+        function hari(input){
+            display.value += input;
+        }
+        function appendtodisplay(){
+            display.value = "";
+        }
+        function claculate(){
+          try{
+            display.value=eval(display.value);
+         
+          }
+          catch(error){
+                    display.value="error";
+          }
+         
+        }
+
+    </script>
+    
+</body>
+</html>
